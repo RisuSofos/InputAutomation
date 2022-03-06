@@ -1,0 +1,43 @@
+﻿<Window x:Class="InputAutomation.Windows.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:InputAutomation.Windows"
+		mc:Ignorable="d"
+		Title="MainWindow" WindowStyle="None" Height="450" Width="800">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
+	<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="0" Width="22" Height="22" Margin="4" Source="/Logo.png"/>
+        <TextBlock Grid.Column="1" Margin="4,0,0,0" VerticalAlignment="Center" FontSize="14" Text="{Binding WindowTitle}">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource WindowTitleBarInactiveText}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button Grid.Column="2" Click="OnMinimizeButtonClick" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}">
+            <Path Width="46" Height="32" Data="M18,15H28" StrokeThickness="1" Stroke="{Binding Path=Forground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" />
+        </Button>
+    </Grid>
+</Window>
