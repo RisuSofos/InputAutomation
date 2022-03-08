@@ -1,6 +1,6 @@
 ﻿namespace InputAutomation.Core.User32;
 
-internal enum VirtualKeyShort: short {
+public enum VirtualKeyShort: short {
 	///<summary>
 	///Left mouse button
 	///</summary>

@@ -1,6 +1,6 @@
 ﻿namespace InputAutomation.Core.User32;
 
-internal enum ScanCodeShort: short {
+public enum ScanCodeShort: short {
 	LBUTTON = 0,
 	RBUTTON = 0,
 	CANCEL = 70,

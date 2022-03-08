@@ -3,8 +3,7 @@
 namespace InputAutomation.Core.User32;
 
 [StructLayout(LayoutKind.Sequential)]
-public struct HardwareInput {
-	internal int uMsg;
-	internal short wParamL;
-	internal short wParamH;
+public struct Input {
+	internal InputType Type;
+	internal static int Size => Marshal.SizeOf(typeof(Input));
 }
