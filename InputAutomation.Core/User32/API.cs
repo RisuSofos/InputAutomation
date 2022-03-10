@@ -6,8 +6,11 @@ namespace InputAutomation.Core.User32;
 /// Wrapper for the User32.dll SendInput API call
 /// </summary>
 public class API {
-	public delegate void HandleInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] Input[] pInputs, int cbSize);
+	public static async Task<uint> ProcessInput(Input[] inputs) {
+		uint result = SendInput((uint)inputs.Length, inputs, Input.Size);
+		return await Task.FromResult(result);
+	}
 
 	[DllImport("user32.dll")]
-	internal static extern uint SendInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] Input[] pInputs, int cbSize);
+	private static extern uint SendInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] Input[] pInputs, int cbSize);
 }

@@ -4,12 +4,12 @@ namespace InputAutomation.Core.User32;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct MouseInput {
-	internal int dx;
-	internal int dy;
-	internal int mouseData;
-	internal MouseEventF dwFlags;
-	internal uint time;
-	internal UIntPtr dwExtraInfo;
+	public int dx;
+	public int dy;
+	public int mouseData;
+	public MouseEventF dwFlags;
+	public uint time;
+	public UIntPtr dwExtraInfo;
 }
 
 [Flags]

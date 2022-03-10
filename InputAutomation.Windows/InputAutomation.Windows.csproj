@@ -7,4 +7,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InputAutomation.Core\InputAutomation.Core.csproj" />
+  </ItemGroup>
+
 </Project>

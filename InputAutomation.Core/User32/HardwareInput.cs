@@ -4,7 +4,7 @@ namespace InputAutomation.Core.User32;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct HardwareInput {
-	internal int uMsg;
-	internal short wParamL;
-	internal short wParamH;
+	public int uMsg;
+	public short wParamL;
+	public short wParamH;
 }
